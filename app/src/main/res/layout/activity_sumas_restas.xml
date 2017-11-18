@@ -15,38 +15,63 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:elevation="1dp"
+        android:elevation="0dp"
         android:onClick="suma"
         android:text="Nueva suma" />
 
     <TextView
-        android:id="@+id/num1"
+        android:id="@+id/num1_dig1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/num2"
+        android:layout_alignBottom="@+id/num2_dig1"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="44dp"
+        android:text="0"
         android:textSize="35dp" />
 
     <TextView
-        android:id="@+id/num2"
+        android:id="@+id/num1_dig2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/num1"
+        android:layout_alignBottom="@+id/num2_dig1"
+        android:layout_marginBottom="44dp"
+        android:text="0"
+        android:textSize="35dp"
+        android:layout_alignTop="@+id/num1_dig1"
+        android:layout_toLeftOf="@+id/num1_dig1"
+        android:layout_toStartOf="@+id/num1_dig1" />
+
+    <TextView
+        android:id="@+id/num2_dig1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/num1_dig1"
         android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/num1"
+        android:layout_alignStart="@+id/num1_dig1"
         android:layout_marginTop="152dp"
+        android:text="0"
+        android:textSize="35dp" />
+
+    <TextView
+        android:id="@+id/num2_dig2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/num1_dig2"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/num1_dig2"
+        android:layout_marginTop="152dp"
+        android:text="0"
         android:textSize="35dp" />
 
     <TextView
         android:id="@+id/suma"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/num2"
+        android:layout_alignBottom="@+id/num2_dig1"
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
-        android:layout_toLeftOf="@+id/num2"
-        android:layout_toStartOf="@+id/num2"
+        android:layout_toLeftOf="@+id/num2_dig1"
+        android:layout_toStartOf="@+id/num2_dig1"
         android:text="+"
         android:textSize="35dp" />
 
@@ -60,14 +85,28 @@
         />
 
     <EditText
-        android:id="@+id/result"
+        android:id="@+id/result_dig1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/num2"
-        android:layout_alignRight="@+id/num2"
-        android:layout_below="@+id/num2"
+        android:layout_alignEnd="@+id/num2_dig1"
+        android:layout_alignRight="@+id/num2_dig1"
+        android:layout_below="@+id/num2_dig1"
         android:layout_marginTop="12dp"
-        android:layout_toRightOf="@+id/suma"
+        android:layout_toEndOf="@+id/num2_dig2"
+        android:layout_toRightOf="@+id/num2_dig2"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/result_dig2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/result_dig1"
+        android:layout_alignBottom="@+id/result_dig1"
+        android:layout_alignLeft="@+id/num2_dig2"
+        android:layout_alignStart="@+id/num2_dig2"
+        android:layout_toLeftOf="@+id/result_dig1"
         android:ems="10"
         android:inputType="textPersonName"
         android:textSize="20sp" />
