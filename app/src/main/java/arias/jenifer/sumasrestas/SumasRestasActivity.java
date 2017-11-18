@@ -58,19 +58,23 @@ public class SumasRestasActivity extends AppCompatActivity {
     }
 
     private void generarPosiciones () {                                 //Método para generar posiciones de la suma
-        int random_digito = (int)  Math.floor(Math.random() * 4);       //Generación del primer número: de 1 a 3 dígitos
+        int random_digito1 = (int)  Math.floor(Math.random() * 4);       //Generación del primer número: de 1 a 3 dígitos
+        opciones[0] = random_digito1;
         int random_digito2;
-        while (random_digito == 0) {                                    //Si el primer número es 0, vuelve a generarlo hasta que salga de 1 a 3.
-             random_digito = (int)  Math.floor(Math.random() * 4);
+        while (random_digito1 == 0) {                                    //Si el primer número es 0, vuelve a generarlo hasta que salga de 1 a 3.
+            random_digito1 = (int)  Math.floor(Math.random() * 4);
+            opciones[0] = random_digito1;
         }
 
-        if (random_digito == 1) {                                       //Si el primer número tiene 1 dígito, el segundo número tendrá de 1 a 3.
+        if (random_digito1 == 1) {                                       //Si el primer número tiene 1 dígito, el segundo número tendrá de 1 a 3.
             num1_dig1.setVisibility(View.VISIBLE);
             num1_dig2.setVisibility(View.INVISIBLE);
-
             random_digito2 = (int)  Math.floor(Math.random() * 4);
-            while (random_digito2 == 0) {                               //Si el segundo número es 0, vuelve a generarlo hasta que salga de 1 a 3.
-                random_digito2 = (int)  Math.floor(Math.random() * 4);
+            opciones[1] = random_digito2;
+
+            while (random_digito2 == 0) {                               //Si el segundo número es 0,
+                random_digito2 = (int)  Math.floor(Math.random() * 4);  //vuelve a generarlo hasta que salga de 1 a 3.
+                opciones[1] = random_digito2;
             }
 
             if(random_digito2 == 1) {
@@ -82,16 +86,18 @@ public class SumasRestasActivity extends AppCompatActivity {
                 num2_dig2.setVisibility(View.VISIBLE);
             }
         }
+
         else {                                                          //En cualquier otro caso el primer número tiene 2 o 3 dígitos, por lo tanto el segundo número tendrá 1 dígito.
-            if(random_digito == 2) {
-                random_digito2 = 1;
+            if(random_digito1 == 2) {
+                random_digito2 = (int)  Math.floor(Math.random() * 1);
+                opciones[1] = random_digito2;
                 num1_dig2.setVisibility(View.VISIBLE);
                 num2_dig2.setVisibility(View.INVISIBLE);
             }
         }
 
-     //   opciones[0] = random_digito;
-      //  opciones[1] = random_digito2;
+       // opciones[0] = random_digito1;
+       // opciones[1] = random_digito2;
 
     }
 
@@ -101,6 +107,8 @@ public class SumasRestasActivity extends AppCompatActivity {
 
     private void nuevaSuma() {
         generarPosiciones();// Método para generar nuevas sumas
+        Log.i("generar", String.valueOf(opciones[0]));
+        Log.i("generar", String.valueOf(opciones[1]));
         int random_num1_dig1 = (int)  Math.floor(Math.random() * 10);       // Generación random de los dígitos, número del 0 al 9.
         int random_num1_dig2 = (int)  Math.floor(Math.random() * 10);
         int random_num2_dig1 = (int)  Math.floor(Math.random() * 10);
